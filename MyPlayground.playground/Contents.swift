@@ -1,6 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import Foundation
 
 //var str = "Hello, playground"
 //
@@ -276,6 +277,173 @@ import UIKit
 ////}
 
 //-----------------------------------------------------Struct----------------------------------------------
+
+//struct Person{
+//    var name:String?
+//    var idade:Int = 0
+//
+//    init(nome:String){
+//        self.name = nome
+//    }//Metodo init mata todos os outros metodos dentro do struct
+//
+//    func sayHello(){
+//        print("Hello")
+//    }
+//
+//    mutating func incrementAge(){
+//        idade += 1
+//    }//Esse metodo esta modificando a propriedade do struct, isso ele nao permite, por isso temos que assinalar como "mutanting"
+//}
+//
+//var newPerson = Person(nome: "Ronaldo")
+//
+//newPerson.idade = 54
+
+//Computed Properties (Propriedade computada)
+//
+//struct Temperature{
+//    var celsius:Double
+//    var Fahrenheit: Double
+//}
+
+//var temperature = Temperature.init(celsius: 25) -> Dessa forma eu nao consigo nao consigo trazer uma propriedade apenas
+
+//struct Temperatue{
+//    var celsius:Double
+//    var Fahrenheit:Double{
+//        return celsius * 1.8 + 32
+//    }
+//}
+//
+//var temperature = Temperatue(celsius: 25)
+//
+//print(temperature.celsius)
+//print(temperature.Fahrenheit)
+
+//-----------------------------------------------------Funções----------------------------------------------
+
+//Aqui eh uma forma de usar o underline para nao precisarmos passar o nome das variaveis nos argumentos
+
+//func sum(_ a:Int,_ b:Int) -> Int{
+//    return a + b
+//}
+//print(sum(10,2))
+//
+//func multiply(_ number1:Int, by number2:Int) -> Int{//Uma forma boa de explicitar um argmento para q ele faca sentido, eh colocando um by
+//    return number1 * number2
+//}
+//
+//print(multiply(10, by: 10))
+
+//
+//func sum(_ initialValue: Int, withValues values: Int...) -> Int{ //3 pontos aqui quer dizer q se trata de um range
+//    var result = initialValue
+//    for value in values{
+//        result += value
+//    }
+//    return result
+//}
+//
+//print(sum(2, withValues: 10,2,54,33,21))
+
+//let studentData = "Robson:39"
+//
+//func getStudentData(_ data:String) -> (name:String, age: Int){  //Aqui há um retorno de uma tupla
+//    let info = data.components(separatedBy: ":") //Aqui determinamos que ha uma separacao no array entre nome e idade, por isso importamos o fundation
+//    let studentName = info[0] //Determinamos que o nome ficara no arrray de posicao 0
+//    let studentAge = Int(info[1])//Determinamos que a idade ficara no array de posicao 1
+//    return (studentName, studentAge!)
+//}
+//
+//let student = getStudentData(studentData)
+//print(student.age)
+//print(student.name)
+
+
+//Firt Class Citizen (Quando suporta todos os tipos basicos de operacoes)
+
+
+//func sum(_ a:Int, _ b:Int) -> Int{
+//    return a + b
+//}
+//
+//func subtract(_ a:Int, _ b:Int) -> Int{
+//    return a - b
+//}
+//
+//func divide(_ a:Int, _ b:Int) -> Int{
+//    return a/b
+//}
+//func multiply(_ a:Int, _ b:Int) -> Int{
+//    return a * b
+//}
+
+//func applyOperation(_ a:Int, _ b:Int, operation:(Int,Int) -> Int) -> Int{
+//    return operation(a,b)
+//}
+//
+//print(applyOperation(10, 10, operation: divide)) //Aqui nos retornamos uma funcao, entao uma funcao retorna outra funcao
+
+//typealias op = (Int,Int) -> Int //Aqui serve para criarmos um apelido, um typealias para que fique um pouco melhor de ler os parametros da função
+//
+//func applyOperation(_ a:Int, _ b:Int, operation:op) -> Int{
+//    return operation(a,b)
+//}
+//
+//print(applyOperation(20, 10, operation: divide)) //Aqui nos retornamos uma funcao, entao uma funcao retorna outra funcao
+
+//Outra forma de criar uma funcao e coloca la dentro de uma variavel
+
+//func getOperation(_ operation:String) -> (Int,Int) -> Int {
+//    switch operation{
+//    case "Soma":
+//        return sum
+//    case "Subtração":
+//        return subtract
+//    case "Multiplicação":
+//        return multiply
+//    default:
+//        return divide
+//}
+//}
+//
+//var operation = getOperation("Soma")
+//
+//print(operation(15,2))
+
+
+//-------------------------------------------------------------------Closures---------------------------------------------------------------------------
+
+//Closures sao funcoes anonimas ou nao tem nome
+{(nome:String) -> String in
+    nome = "Reausudh"
+    return nome
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
