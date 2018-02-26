@@ -415,34 +415,121 @@ import Foundation
 //-------------------------------------------------------------------Closures---------------------------------------------------------------------------
 
 //Closures sao funcoes anonimas ou nao tem nome
-{(nome:String) -> String in
-    nome = "Reausudh"
-    return nome
-}
+//{(nome:String) -> String in
+//    nome = "Reausudh"
+//    return nome
+//}
+
+//func sum(_ a: Int, _ b:Int) -> Int{
+//    return a + b
+//}
+//
+//func multiply(_ a:Int, _ b:Int) -> Int{
+//    return a * b
+//}
+//
+//func calculate (_ a:Int, _ b:Int, operation: (Int, Int) -> Int) -> Int{
+//    return operation(a,b)
+//}
+
+//print(calculate(14, 13, operation: {(a:Int, b:Int) -> Int in return a + b}))
+
+//caso queira simplificar a closure
+
+//print(calculate(121, 123, operation: {a,
+//    b in
+//     return a * b
+//}))
 
 
+//print(calculate(10, 14) { $0 * $1})
+
+//print(calculate(123, 232, operation: *)) forma mais simplificado possivel de uma closure
+
+//print(calculate(43, 454, operation: {$0 * $1}))
+
+//
+//var nome = ["  DUHASUDH   ",
+//            "sdfsdf",
+//            "Bla",
+//            "asdasd",
+//            "HUEUEUHEU",
+//]
+
+////MAP
+//let teste = nome.map({$0.trimmingCharacters(in: CharacterSet.whitespaces)}) //Aqui usamos o map para trazer todos os indicies do array, ignorando os espacoes me branco
+//
+//let teste2 = teste.map({$0.uppercased()})
+//
+//let teste3 = teste.map({$0 + " O que eh isso rapaiz!"})
+////print(teste3)
+//
+////FILTER
+//
+//let newNames = nome.filter({$0.count > 2})
+//
+//if newNames.count == EMPTY{
+// print("Array vazio!")
+//}else{
+//print(newNames)
+//}
+
+//Reduce
+//let teste4 = teste.reduce(0, {$0 + $1.count})
+//print(teste4)
 
 
+//-------------------------------------------------------------------Tratamento de Erros---------------------------------------------------------------------------
 
+//enum LoginError : Error{
+//    case loginIncorrect
+//    case passwordIncorrect
+//    case noInternetConnection
+//}
+//
+//func login(login2:String, password: String) throws -> Bool{
+//   if checkInternetConnection(){
+//        if login2 != "Rob"{
+//            throw LoginError.loginIncorrect
+//        }
+//        if password != "1234"{
+//            throw LoginError.passwordIncorrect
+//        }
+//        return true
+//    }else{
+//        throw LoginError.noInternetConnection
+//    }
+//}
+//func checkInternetConnection() -> Bool{
+//    return true
+//}
+//do {
+//   let result = try login(login2: "Rob", password: "1234")
+//}catch LoginError.loginIncorrect{
+//    print("Login Incorreto!")
+//}catch LoginError.passwordIncorrect{
+//    print("Senha Incorreta!")
+//}catch LoginError.noInternetConnection{
+//    print("Sem conexao com a internet!!")
+//}
+//
+//if checkInternetConnection() == true{
+//    print("Login feito com sucesso!!")
+//}
+//Como tratar cada erro na aplicacao
 
+//-------------------------------------------------------------------Operadores Personalizados------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//prefix operator ++ //Lado esquerdo do operador
+//prefix func ++ (rhs: [Int]) -> [Int]{ //Essa variavel so se comunica com ArrayList
+//    let result = rhs.map({$0 + 1})
+//    return result
+//}
+//
+//let ages = [9,25,3,4,45,55]
+//let bue = ++ages
+//
+//print(bue)
 
 
 
