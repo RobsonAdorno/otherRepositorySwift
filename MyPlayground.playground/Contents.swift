@@ -531,6 +531,133 @@ import Foundation
 //
 //print(bue)
 
+//-------------------------------------------------------------------Classes------------------------------------------------------------------------
+
+//Classe
+
+//class Carro{
+//    var placa:Int = 0
+//    var modelo:String = ""
+//    //Em orientação a objetos a classe eh obrigatorio fazer um metodo inicializador/construtor. Diferente do struct que cria altomaticamente
+//    init(placa:Int, modelo:String) {
+//        self.modelo = modelo
+//        self.placa = placa
+//    }
+//
+//}
+//
+//Carro.init(placa: 1233, modelo: "Fusca")
+//
+
+//class Person{
+//    var name:String
+//    var age:Int
+//    var gender:Character
+//
+//    init(name:String, age:Int, gender:Character) {
+//        self.name = name
+//        self.age = age
+//        self.gender = gender
+//    }
+//    func speak(sentence: String){
+//        if age < 3{
+//            print("RAPAIZZZZZZZ")
+//        }else{
+//            print(sentence)
+//        }
+//    }
+//        func apresentation(){
+//            speak(sentence: "Olá, meu nome é \(name) e tenho \(age) anos")
+//        }
+//}
+//
+//let persona = Person.init(name: "Ronaldo", age: 12, gender: "M")
+//
+//persona.age = 1
+//
+//print(persona.apresentation())
 
 
+//class Person{
+//    var nome:String
+//    var idade:Int
+//
+//    init(nome:String, idade:Int) {
+//        self.nome = nome
+//        self.idade = idade
+//    }
+//
+//    func deMenor(verificacao:String){
+//        if idade < 18{
+//            print("Ola, eu sou \(nome) e sou de menor!!")
+//        }else{
+//            print(verificacao)
+//        }
+//    }
+//
+//    func apresentacao(){
+//        deMenor(verificacao: "Ola, meu nome é \(nome) e tenho \(idade) anos!")
+//    }
+//}
+//
+//let robson = Person.init(nome: "Robson", idade: 23)
+//let ronaldo = Person(nome: "Ronaldo", idade: 87)
+//let mlkin = Person(nome: "Cardosin", idade: 12)
+//
+//print(mlkin.apresentacao())
+
+
+
+//-------------------------------------------------------------------Herança------------------------------------------------------------------------
+
+class Carro{
+    var placa:Int
+    var modelo: String
+    
+    init(placa:Int, modelo:String) {
+        self.placa = placa
+        self.modelo = modelo
+    }
+    
+}
+
+class esportivo: Carro{
+    
+    let tipo:String
+    //Designated Initializar -> Obrigacao de aliementar tds as propriedades
+     init(placa: Int, modelo: String, tipo:String) {
+        self.tipo = tipo
+        super.init(placa: placa, modelo: modelo)
+    }
+    
+    func sons(){
+        print("O meu carro é \(modelo) e a cor é \(tipo)")
+    }
+}
+
+let corsa = esportivo.init(placa: 1234556, modelo: "BLA", tipo: "Azul")
+
+print(corsa.sons())
+
+//Convenience Initializer -> Nao obriga a alimentar todas as propriedades
+class teste: Carro{
+    var seiLa: String
+    
+    init(placa: Int, modelo: String, seiLa:String) {
+        self.seiLa = seiLa
+        super.init(placa: placa, modelo: modelo)
+    }
+    
+    convenience init(seiLa:String, placa:Int){
+       self.init(placa: placa, modelo: "ASD", seiLa: seiLa) //Estamos trabalhando apenas com 2 prorpiedades e aliementamos manualmente 1 (modelo)
+    }
+}
+
+let hue = teste.init(seiLa: "DUSAHDUHASD", placa: 5748578) //Aqui esta evidente que nos inicializamos 2 propriedades apenas
+//
+// 1)Designated Initializar deve construir uma classe e precisa chamar outro designated da classe mae
+
+// 2)Convenience Initializer deve chamar outro inicializer da mesma classe
+
+//3)Convenience Initializer deve chamar, no final, um designated inicializer
 
