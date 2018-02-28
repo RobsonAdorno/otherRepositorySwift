@@ -610,54 +610,63 @@ import Foundation
 
 //-------------------------------------------------------------------Herança------------------------------------------------------------------------
 
-class Carro{
-    var placa:Int
-    var modelo: String
-    
-    init(placa:Int, modelo:String) {
-        self.placa = placa
-        self.modelo = modelo
-    }
-    
-}
-
-class esportivo: Carro{
-    
-    let tipo:String
-    //Designated Initializar -> Obrigacao de aliementar tds as propriedades
-     init(placa: Int, modelo: String, tipo:String) {
-        self.tipo = tipo
-        super.init(placa: placa, modelo: modelo)
-    }
-    
-    func sons(){
-        print("O meu carro é \(modelo) e a cor é \(tipo)")
-    }
-}
-
-let corsa = esportivo.init(placa: 1234556, modelo: "BLA", tipo: "Azul")
-
-print(corsa.sons())
-
-//Convenience Initializer -> Nao obriga a alimentar todas as propriedades
-class teste: Carro{
-    var seiLa: String
-    
-    init(placa: Int, modelo: String, seiLa:String) {
-        self.seiLa = seiLa
-        super.init(placa: placa, modelo: modelo)
-    }
-    
-    convenience init(seiLa:String, placa:Int){
-       self.init(placa: placa, modelo: "ASD", seiLa: seiLa) //Estamos trabalhando apenas com 2 prorpiedades e aliementamos manualmente 1 (modelo)
-    }
-}
-
-let hue = teste.init(seiLa: "DUSAHDUHASD", placa: 5748578) //Aqui esta evidente que nos inicializamos 2 propriedades apenas
+//class Carro{
+//    var placa:Int
+//    var modelo: String
+//
+//    init(placa:Int, modelo:String) {
+//        self.placa = placa
+//        self.modelo = modelo
+//    }
+//
+//}
+//
+//class esportivo: Carro{
+//
+//    let tipo:String
+//    //Designated Initializar -> Obrigacao de aliementar tds as propriedades
+//     init(placa: Int, modelo: String, tipo:String) {
+//        self.tipo = tipo
+//        super.init(placa: placa, modelo: modelo)
+//    }
+//
+//    func sons(){
+//        print("O meu carro é \(modelo) e a cor é \(tipo)")
+//    }
+//}
+//
+//let corsa = esportivo.init(placa: 1234556, modelo: "BLA", tipo: "Azul")
+//
+//print(corsa.sons())
+//
+////Convenience Initializer -> Nao obriga a alimentar todas as propriedades
+//class teste: Carro{
+//    var seiLa: String
+//
+//    init(placa: Int, modelo: String, seiLa:String) {
+//        self.seiLa = seiLa
+//        super.init(placa: placa, modelo: modelo)
+//    }
+//
+//    convenience init(seiLa:String, placa:Int){
+//       self.init(placa: placa, modelo: "ASD", seiLa: seiLa) //Estamos trabalhando apenas com 2 prorpiedades e aliementamos manualmente 1 (modelo)
+//    }
+//}
+//
+//let hue = teste.init(seiLa: "DUSAHDUHASD", placa: 5748578) //Aqui esta evidente que nos inicializamos 2 propriedades apenas
 //
 // 1)Designated Initializar deve construir uma classe e precisa chamar outro designated da classe mae
 
 // 2)Convenience Initializer deve chamar outro inicializer da mesma classe
 
 //3)Convenience Initializer deve chamar, no final, um designated inicializer
+
+//-------------------------------------------------------------------Encapsulamento------------------------------------------------------------------------
+
+
+
+
+
+
+
 
