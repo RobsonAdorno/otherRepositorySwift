@@ -661,12 +661,27 @@ import Foundation
 
 //3)Convenience Initializer deve chamar, no final, um designated inicializer
 
-//-------------------------------------------------------------------Encapsulamento------------------------------------------------------------------------
+//-------------------------------------------------------------------Extensoes(Extensions)------------------------------------------------------------------------
+//Adicionando novas funcionalidades/propriedades a classes, metodos e enuns
 
+//let nome = "Robson Adorno Ferreira"
+//
+//extension String{
+//    var vocal: [Character]{
+//        var list: [Character] = []
+//        for caracter in characters{
+//            switch String(caracter).lowercased() {
+//            case "a","e","i","o","u":
+//                list.append(caracter)
+//            default:
+//                break
+//            }
+//        }
+//        return list
+//    }
+//}
 
-
-
-
+//-------------------------------------------------------------------Protocolo(Protocol)------------------------------------------------------------------------
 
 
 
