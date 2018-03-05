@@ -681,7 +681,47 @@ import Foundation
 //    }
 //}
 
-//-------------------------------------------------------------------Protocolo(Protocol)------------------------------------------------------------------------
+//-------------------------------------------------------------------Subscripts e Generics------------------------------------------------------------------------
 
-
+//class Car{
+//
+//    var licensePlate: String
+//
+//    subscript(index: Int) -> String{
+//        get{
+//            let characteres = Array(licensePlate)[index]
+//            return String (characteres)
+//        }set{
+//            var array = Array(licensePlate)
+//            array[index] = Character(newValue)
+//            self.licensePlate = String(array)
+//        }
+//    }
+//
+//    init(licensePlate: String){
+//        self.licensePlate = licensePlate
+//    }
+//}
+//
+//let car = Car(licensePlate: "BLA-9873")
+//car[2] = "F"
+//
+//print(car.licensePlate)
+//
+////Generics
+//
+//
+//func testeValues<T>(_ a:inout T, _ b:inout T){ // Uma forma de modificar os parametros, que por natureza sao constantes
+//    let hue = a
+//    a = b
+//    b = hue
+//}
+//
+//var a = 10
+//var b = 200
+//
+//testeValues(&a , &b)
+//
+//a
+//b
 
